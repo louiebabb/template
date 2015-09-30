@@ -958,65 +958,65 @@ body {
   }
 }
 @media (max-width: 900px) {
-  /* line 449, ../../src/css/sass/_global.scss */
+  /* line 448, ../../src/css/sass/_global.scss */
   .block {
     margin: 25px 0;
   }
 
-  /* line 452, ../../src/css/sass/_global.scss */
+  /* line 451, ../../src/css/sass/_global.scss */
   .segment {
     height: 700px !important;
   }
-  /* line 455, ../../src/css/sass/_global.scss */
+  /* line 454, ../../src/css/sass/_global.scss */
   .segment .slice h1 {
     margin-bottom: 15px;
   }
-  /* line 459, ../../src/css/sass/_global.scss */
+  /* line 458, ../../src/css/sass/_global.scss */
   .segment a {
     margin-top: 15px;
   }
-  /* line 463, ../../src/css/sass/_global.scss */
+  /* line 462, ../../src/css/sass/_global.scss */
   .segment.home .slice {
     width: 75%;
   }
-  /* line 466, ../../src/css/sass/_global.scss */
+  /* line 465, ../../src/css/sass/_global.scss */
   .segment.home .scroll {
     bottom: -50px !important;
     width: 440px !important;
     margin-left: -220px;
   }
-  /* line 470, ../../src/css/sass/_global.scss */
+  /* line 469, ../../src/css/sass/_global.scss */
   .segment.home .scroll .browser {
     width: 100%;
   }
-  /* line 472, ../../src/css/sass/_global.scss */
+  /* line 471, ../../src/css/sass/_global.scss */
   .segment.home .scroll .browser img {
     height: auto;
   }
 }
 @media (max-width: 640px) {
-  /* line 481, ../../src/css/sass/_global.scss */
+  /* line 480, ../../src/css/sass/_global.scss */
   .segment {
     height: auto !important;
     min-height: initial;
     padding: 0 0 60px;
   }
-  /* line 486, ../../src/css/sass/_global.scss */
+  /* line 485, ../../src/css/sass/_global.scss */
   .segment.home .contact {
     right: 20px;
   }
-  /* line 489, ../../src/css/sass/_global.scss */
+  /* line 488, ../../src/css/sass/_global.scss */
   .segment.home .slice {
     width: 100%;
   }
-  /* line 491, ../../src/css/sass/_global.scss */
+  /* line 490, ../../src/css/sass/_global.scss */
   .segment.home .slice .block {
     text-align: left;
     font-size: 18px;
     line-height: 30px;
   }
 
-  /* line 499, ../../src/css/sass/_global.scss */
+  /* line 498, ../../src/css/sass/_global.scss */
   .iphone, .browser {
     display: none !important;
   }

@@ -1,15 +1,3 @@
-// @import "sprite-files/*.png";
-
-// .bold-icon { @include toolbar-sprite(bold); }
-// .italic-icon { @include toolbar-sprite(italic); }
-// .link-icon { @include toolbar-sprite(link); }
-
-// $icons: sprite-map("sprite-files/*.png");
-
-// .bold-icon { background: sprite($icons, bold); }
-// .italic-icon { background: sprite($icons, italic); }
-// .link-icon { background: sprite($icons, link); }
-
 @import "compass/utilities/sprites";
 @import "sprite-files/retina/*.png";
 @include all-retina-sprites;
