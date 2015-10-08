@@ -12,77 +12,61 @@ $( document ).ready(function() {
 	var height = $( window ).height();
 	$('.segment').css('height', height);
 
-	$(window).scroll(function() {
+  //Sections Fade In and allign themselves
+  function fadeIn(x){
     var height = $(window).scrollTop();
-    var wr = $(".wr").offset().top - 100;
-    var icc = $(".icc").offset().top - 100;
-    var london = $(".london").offset().top - 100;
-    var bob = $(".bob").offset().top - 100;
-    var bbc = $(".bbc").offset().top - 100;
-
-    if(height  > wr ) {
-    	$(".segment.wr").addClass('active');
-   	}
-   	if(height  > icc ) {
-   		// alert("height " + height + " ICC " + icc);
-    	$(".segment.icc").addClass('active');
-   	}
-   	if(height  > london ) {
-   		// alert("height " + height + " ICC " + icc);
-    	$(".segment.london").addClass('active');
-   	}
-   	if(height  > bob ) {
-   		// alert("height " + height + " ICC " + icc);
-    	$(".segment.bob").addClass('active');
-      $('.segment.bob iframe[src=""]').attr('src', 'http://louiebabb.com/bob/reveal-flip-3d-image-1.html');
-   	}
-   	if(height  > bbc ) {
-   		// alert("height " + height + " ICC " + icc);
-    	$(".segment.bbc").addClass('active');
+    if (height > x.offsetHeight ){
+      $(x.section).addClass('active');
     }
+  }
+  function scrollAllign(x){
+    var height = $(window).scrollTop();
+    if (height > x.offsetHeight - 200 && height < x.offsetHeight + 500 ){
+      $('body').scrollTo(x.offsetHeight + 100, 800);
+    }
+  }
+	$(window).scroll(function() {
+    function Segment(div){
+      this.offsetHeight = $(div).offset().top - 100;
+      this.section = $(".segment" + div);
+    }
+    var wr = new Segment('.wr');
+    var icc = new Segment('.icc');
+    var london = new Segment('.london');
+    var bob = new Segment('.bob');
+    var bbc = new Segment('.bbc');
+    fadeIn(wr);
+    fadeIn(icc);
+    fadeIn(london);
+    fadeIn(bob);
+    fadeIn(bbc);
     if ( $(this).width() > 720 ) {
   		clearTimeout($.data(this, 'scrollTimer'));
       $.data(this, 'scrollTimer', setTimeout(function() {
-          // do something
-          if(height  > wr - 200 && height < wr + 500 ) {
-        		$('body').scrollTo(wr + 100, 800);
-  		}
-  		if(height  > icc - 200 && height < icc + 500) {
-        		$('body').scrollTo(icc + 100, 800);
-  		}
-  		if(height  > london - 200 && height < london + 500) {
-        		$('body').scrollTo(london + 100, 800);
-  		}
-  		if(height  > bob - 200 && height < bob + 500) {
-        		$('body').scrollTo(bob + 100, 800);
-  		}
-  		if(height  > bbc - 200) {
-        		$('body').scrollTo(bbc + 100, 800);
-  		}
+        // do something
+        scrollAllign(wr);
+        scrollAllign(icc);
+        scrollAllign(london);
+        scrollAllign(bob);
+        scrollAllign(bbc);
       }, 1000));
     }
   });
 
   //Scroller Home slide to section
-  var height = $(window).scrollTop();
+  var wr = $(".wr").offset().top - 100;
   var icc = $(".icc").offset().top - 100;
   var london = $(".london").offset().top - 100;
   var bob = $(".bob").offset().top - 100;
   var bbc = $(".bbc").offset().top - 100;
-  $('.scroll .browser.center').click(function(){
-    var wr = $(".wr").offset().top - 100;
-    $('body').scrollTo(wr + 100, 1200);
-  });
-  $('.scroll .browser.left').click(function(){
-    $('body').scrollTo(bbc + 100, 1200);
-  });
-  $('.scroll .browser.right').click(function(){
-    $('body').scrollTo(icc + 100, 1200);
-  });
-  $('.scroll .browser.leftBack').click(function(){
-    $('body').scrollTo(london + 100, 1200);
-  });
-  $('.scroll .browser.rightBack').click(function(){
-    $('body').scrollTo(bob + 100, 1200);
-  });
+  function ScrollToFunc(x, y){
+    x.click(function(){
+      $('body').scrollTo(y + 100, 1200);
+    });    
+  }
+  ScrollToFunc($('.scroll .browser.center'), wr);
+  ScrollToFunc($('.scroll .browser.left'), bbc);
+  ScrollToFunc($('.scroll .browser.right'), icc);
+  ScrollToFunc($('.scroll .browser.leftBack'), london);
+  ScrollToFunc($('.scroll .browser.rightBack'), bob);
 });
